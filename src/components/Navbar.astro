@@ -1,5 +1,5 @@
 ---
-import logo from "../assets/images/logo-yellow-gold.svg";
+import logo from "../assets/images/favicon.png";
 import { LanguageSelector } from "astro-i18next/components";
 import { t } from "i18next";
 import { Image } from "@astrojs/image/components";
@@ -13,7 +13,7 @@ import { Image } from "@astrojs/image/components";
         <span>{t("common.sound")}</span>
       </button>
       <a class="navbar-brand" href="#">
-        <Image src={logo} alt="Manhattan Manor Logo" width={30} height={48} />
+        <Image src={logo} alt="Rosie O'Grady's Logo" width={30} height={30} format="webp" />
       </a>
     </div>
     <div style="display: inherit;">
@@ -24,7 +24,7 @@ import { Image } from "@astrojs/image/components";
         <li>
           <a
             id="nye-link"
-            href="https://nye.manhattanmanor.com/"
+            href="https://www.rosieogradys.com/newyear"
             rel="noopener noreferrer">{t("common.nye.abbreviated")}</a
           >
         </li>
@@ -231,7 +231,7 @@ import { Image } from "@astrojs/image/components";
     } else {
       // If we are on desktop, change SPA to ESPAÑOL and NYE to NEW YEAR'S EVE
       if (spaLink) spaLink.innerHTML = t("common.spanish") || "ESPAÑOL";
-      if (nyeLink) nyeLink.innerHTML = t("common.nye") || "NEW YEAR'S EVE";
+      if (nyeLink) nyeLink.innerHTML = t("buy-nye-tickets") || "BUY NYE TICKETS";
     }
   };
 
@@ -266,18 +266,4 @@ import { Image } from "@astrojs/image/components";
       }
     });
   }
-
-  // Show sidenav
-  // const sidenav = document.querySelector(".sidenav") as HTMLElement;
-  // const sidenavContent = document.querySelector(
-  //   ".sidenav__content"
-  // ) as HTMLElement;
-  // if (sidenav && sidenavContent)
-  //   sidenav.addEventListener("click", () => {
-  //     if (sidenavContent.style.display === "block") {
-  //       sidenavContent.style.display = "none";
-  //     } else {
-  //       sidenavContent.style.display = "block";
-  //     }
-  //   });
 </script>

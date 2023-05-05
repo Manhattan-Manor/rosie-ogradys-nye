@@ -143,21 +143,8 @@ const rosieVenues = [
 
 <section class="container" id="venues-section">
   <h1 data-aos="fade-up">{t("venues")}</h1>
-  <p data-aos="fade-up">
-    <span class="d-block mb-3">Manhattan Manor</span>
-    {t("venues.description")}
-  </p>
 
-  <div class="row venues">
-    {
-      mmVenues.map((venue) => (
-        <div class="col-12 col-md-6 d-flex justify-content-center">
-          <Venue {...venue} />
-        </div>
-      ))
-    }
-  </div>
-
+  <!-- The restaurant venues -->
   <p data-aos="fade-up">
     <span class="d-block mb-3 fw-bold">{t("the-restaurant")}</span>
     {t("the-restaurant.description")}
@@ -168,7 +155,9 @@ const rosieVenues = [
       <Venue {...restaurantVenues[0]} />
     </div>
   </div>
+  <!-- End the restaurant venues -->
 
+  <!-- Pub & Broadway room venues -->
   <p data-aos="fade-up">
     <span class="d-block mb-3 fw-bold">{t("rosie-pub-broadway-room")}</span>
     {t("rosie-pub-broadway-room.description")}
@@ -183,6 +172,24 @@ const rosieVenues = [
       ))
     }
   </div>
+  <!-- End pub & broadway room venues -->
+
+  <!-- Manhattan Manor Venues -->
+  <p data-aos="fade-up">
+    <span class="d-block mb-3">Manhattan Manor</span>
+    {t("venues.description")}
+  </p>
+
+  <div class="row venues">
+    {
+      mmVenues.map((venue) => (
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+          <Venue {...venue} />
+        </div>
+      ))
+    }
+  </div>
+  <!-- End Manhattan Manor Venues -->
 
   <a href="#contact-us-section" class="d-block mt-5">{t("private-event")}</a>
 </section>

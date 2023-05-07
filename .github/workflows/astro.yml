@@ -80,6 +80,6 @@ jobs:
             target-server: james-wilson.dreamhost.com
             remote-user: dh_eprs97
             private-ssh-key: ${{ secrets.SSH_KEY }}
-            destination-path: ~/nye.manhattanmanor.com/
+            destination-path: ~/nye.rosieogradys.com/
             source-path: ./dist/
         id: deployment

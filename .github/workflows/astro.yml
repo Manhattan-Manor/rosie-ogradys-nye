@@ -71,7 +71,7 @@ jobs:
         uses: SamKirkland/web-deploy@v1
         with:
             target-server: james-wilson.dreamhost.com
-            remote-user: dh_eprs97
+            remote-user: axellr992
             private-ssh-key: ${{ secrets.SSH_KEY }}
             destination-path: ~/nye.rosieogradys.com/
             source-path: ./dist/

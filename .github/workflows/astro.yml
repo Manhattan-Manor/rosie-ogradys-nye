@@ -74,5 +74,5 @@ jobs:
             remote-user: axellr992
             private-ssh-key: ${{ secrets.SSH_KEY }}
             destination-path: ~/nye.rosieogradys.com/
-            source-path: ./dist/
+            source-path: ${{ env.BUILD_PATH }}/dist/
         id: deployment

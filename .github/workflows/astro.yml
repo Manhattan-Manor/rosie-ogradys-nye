@@ -52,9 +52,6 @@ jobs:
           node-version: "16"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
           cache-dependency-path: ${{ env.BUILD_PATH }}/package-lock.json
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v3
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ${{ env.BUILD_PATH }}
@@ -66,9 +63,7 @@ jobs:
             PUBLIC_CMS_IMAGES_ROUTE: ${{ secrets.CMS_IMAGES_ROUTE }}
             PUBLIC_G_RECAPTCHA_SITE_KEY: ${{ secrets.G_RECAPTCHA_SITE_KEY }}
         run: |
-          ${{ steps.detect-package-manager.outputs.runner }} astro build \
-            --site "${{ steps.pages.outputs.origin }}" \
-            --base "${{ steps.pages.outputs.base_path }}"
+          ${{ steps.detect-package-manager.outputs.runner }} astro build
         working-directory: ${{ env.BUILD_PATH }}
       - name: List
         run: ls -la ${{ env.BUILD_PATH }}

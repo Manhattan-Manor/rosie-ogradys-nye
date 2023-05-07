@@ -26,5 +26,5 @@ export default defineConfig({
       noExternal: ["@splidejs/react-splide"],
     },
   },
-  site: "https://manhattanmanor.com/",
+  site: "https://nye.rosieogradys.com/",
 });

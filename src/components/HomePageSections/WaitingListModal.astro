@@ -27,17 +27,45 @@ const recaptchaSiteKey = import.meta.env.PUBLIC_G_RECAPTCHA_SITE_KEY;
       </div>
       <form id="waiting-list-form">
         <div class="modal-body">
-          <label for="email" class="form-label"
-            >{t("contact-us.form.last-name")}</label
-          >
-          <input
-            type="email"
-            class="form-control"
-            name="email"
-            placeholder={t("contact-us.form.email")}
-            data-bs-theme="light"
-            required
-          />
+          <div class="mb-3">
+            <label for="name" class="form-label"
+              >{t("contact-us.form.name")}</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              placeholder={t("contact-us.form.name")}
+              data-bs-theme="light"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="lastname" class="form-label"
+              >{t("contact-us.form.last-name")}</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="lastname"
+              placeholder={t("contact-us.form.last-name")}
+              data-bs-theme="light"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label"
+              >{t("contact-us.form.email")}</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              placeholder={t("contact-us.form.email")}
+              data-bs-theme="light"
+              required
+            />
+          </div>
 
           <div class="g-recaptcha" data-sitekey={recaptchaSiteKey}></div>
         </div>
@@ -90,16 +118,17 @@ const recaptchaSiteKey = import.meta.env.PUBLIC_G_RECAPTCHA_SITE_KEY;
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
       const email = data.email as string;
+      const name = data.name as string;
+      const lastname = data.lastname as string;
 
       try {
-        await fetchWaitingList(email, recaptchaResponse);
+        await fetchWaitingList({ email, name, lastname }, recaptchaResponse);
       } catch (error) {
         Swal.fire({
           title: t("common.error") || "Error!",
           text:
             t("contact-us.form.error-message") ||
             "Something went wrong. Please try again later.",
-          footer: `${error}`,
           icon: "error",
           confirmButtonText: t("common.ok") || "OK",
           confirmButtonColor: "#d9b812",
@@ -110,14 +139,14 @@ const recaptchaSiteKey = import.meta.env.PUBLIC_G_RECAPTCHA_SITE_KEY;
   }
 
   const fetchWaitingList = async (
-    email: string,
+    formdata: { email: string; name: string; lastname: string },
     recaptchaResponse: string
   ) => {
     const res = await fetch(
       "https://cms.manhattanmanor.com/forms/src/addToWaitingList.php",
       {
         method: "POST",
-        body: JSON.stringify({ email, g_captcha: recaptchaResponse }),
+        body: JSON.stringify({ ...formdata, g_captcha: recaptchaResponse }),
       }
     );
     if (res.status !== 200)

@@ -1,0 +1,31 @@
+---
+interface Props {
+  label: string;
+  aosAnimation?: string;
+  aosDelay?: string;
+}
+
+const { label, aosAnimation = "fade-up", aosDelay } = Astro.props;
+---
+
+<div class="stamp" data-aos={aosAnimation} data-aos-delay={aosDelay}>
+  {label}
+</div>
+
+<style>
+  .stamp {
+    width: 150px;
+    height: 150px;
+    background-color: #1a304c;
+    color: #fff;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border: 6px solid #bc9d00;
+    padding: 5px;
+    margin: 0 auto;
+  }
+</style>

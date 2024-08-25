@@ -1,14 +1,14 @@
 import RestaurantMenu from "../classes/RestaurantMenu";
 
 const vegetarianMenu: RestaurantMenu = {
-  name: "Vegetarian - Vegan Menu",
+  name: "Menu 3 Vegetarian-Vegan",
   categories: [
     {
       name: "Appetizer",
       dishes: [
         {
           name: "Grilled Vegetable Napoleon",
-          description: "Roast Tomato Broth",
+          description: "with beet salad",
         },
       ],
     },
@@ -27,11 +27,6 @@ const vegetarianMenu: RestaurantMenu = {
         {
           name: "Wild Mushroom Ravioli (V)",
           description: "Sauteed Spinach, Grape Tomatoes, Lemon-Thyme",
-        },
-        {
-          name: "Coconut Curry",
-          description:
-            "Kabocha Squash, Shitake Mushrooms, Haricots Verts over Quinoa",
         },
       ],
     },

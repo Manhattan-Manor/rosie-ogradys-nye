@@ -1,7 +1,7 @@
 import RestaurantMenu from "../classes/RestaurantMenu";
 
 const glutenFreeMenu: RestaurantMenu = {
-  name: "Gluten - Free Menu",
+  name: "Menu 2",
   categories: [
     {
       name: "Appetizer",

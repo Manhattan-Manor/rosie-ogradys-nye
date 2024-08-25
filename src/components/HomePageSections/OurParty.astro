@@ -1,28 +1,73 @@
 ---
-import { Image } from "@astrojs/image/components";
-import getCircles from "../../data/ourPartyCircles";
 import i18next, { t } from "i18next";
+import Stamp from "../Stamp.astro";
 
-const circles = getCircles(i18next.language);
+---
+import { t } from "i18next";
+import Stamp from "../Stamp.astro";
 ---
 
 <section class="container">
   <h1 class="text-center mb-5" data-aos="fade-up">{t("common.our-party")}</h1>
 
-  <div class="row">
-    {
-      circles.map((circle, i) => {
-        const animationDelay = i * 200;
-        return (
-          <div
-            class="col-12 col-md-4 d-flex justify-content-center mt-5"
-            data-aos="fade-up"
-            data-aos-delay={animationDelay}
-          >
-            <Image src={circle.img} alt={circle.alt} width={150} height={150} />
-          </div>
-        );
-      })
-    }
-  </div>
+  <table class="our-party-table">
+    <thead>
+      <tr>
+        <th>Bar</th>
+        <th>Dinner</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <Stamp label="9pm to 1am" />
+        </td>
+        <td><Stamp label="8pm to 1am" /></td>
+      </tr>
+      <tr>
+        <td><Stamp label="4 Hours Premium Open Bar" /></td>
+        <td><Stamp label="5 Hours Premium Open Bar" /></td>
+      </tr>
+      <tr>
+        <td><Stamp label="Bar Food" /></td>
+        <td><Stamp label="Premium Dinner" /></td>
+      </tr>
+      <tr>
+        <td><Stamp label="DJ Music & Dancing & After Party" /></td>
+        <td><Stamp label="DJ Music & Dancing & After Party" /></td>
+      </tr>
+      <tr>
+        <td><Stamp label="Amenities Photobooth and more" /></td>
+        <td><Stamp label="Amenities Photobooth and more" /></td>
+      </tr>
+      <tr>
+        <td><Stamp label="Street Live View of the Ball Drop" /></td>
+        <td><Stamp label="Street Live View of the Ball Drop" /></td>
+      </tr>
+      <tr>
+        <td><Stamp label="View of the Street and Crowds" /></td>
+        <td><Stamp label="View of the Street and Crowds" /></td>
+      </tr>
+    </tbody>
+  </table>
 </section>
+
+<style>
+  .our-party-table {
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+    border-collapse: collapse;
+  }
+
+  .our-party-table thead {
+    text-transform: uppercase;
+  }
+
+  .our-party-table th,
+  .our-party-table td {
+    padding: 10px;
+  }
+</style>
+

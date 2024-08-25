@@ -14,6 +14,7 @@
     "@astrojs/image": "^0.16.5",
     "@astrojs/partytown": "^1.2.0",
     "@astrojs/react": "^2.0.2",
+    "@jop-software/astro-cookieconsent": "^3.0.0",
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@types/react": "^18.0.28",
@@ -37,7 +38,8 @@
     "react-i18next": "^12.2.0",
     "sharp": "^0.31.3",
     "sweetalert2": "^11.7.3",
-    "timepicker-ui": "^2.6.1"
+    "timepicker-ui": "^2.6.1",
+    "vanilla-cookieconsent": "^3.0.1"
   },
   "devDependencies": {
     "@types/aos": "^3.0.4",

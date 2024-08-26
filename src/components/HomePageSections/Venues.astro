@@ -7,26 +7,12 @@ import PrivateDinningRoom from "../../assets/images/venues/private-dinning-room/
 import Venue from "../Venue.astro";
 import { t } from "i18next";
 
-const manhattanGallery = (
-  await Astro.glob("../../assets/images/venues/manhattan-manor/*.jpg")
-).map((image) => image.default);
-const broadWayRoomGallery = (
-  await Astro.glob("../../assets/images/venues/broadway-room/*.jpg")
-).map((image) => image.default);
-const taftBarGallery = (
-  await Astro.glob("../../assets/images/venues/taft-bar/*.jpg")
-).map((image) => image.default);
-const privateDinningRoomGallery = (
-  await Astro.glob("../../assets/images/venues/private-dinning-room/*.jpg")
-).map((image) => image.default);
-
 const mmVenues = [
   {
     id: 1,
     name: "Manhattan Manor",
     mainImage: ManhattanMain,
-    gallery: manhattanGallery,
-    viewVirtualTour: "https://www.manhattanmanor.com/tour/",
+    viewVirtualTour: "https://rosieogradys.com/private-event",
     description: `
     <h4>${t("venues.size")}</h4>
     <ul>
@@ -46,8 +32,7 @@ const mmVenues = [
     id: 2,
     name: "Broadway Room",
     mainImage: BroadWayRoom,
-    gallery: broadWayRoomGallery,
-    viewVirtualTour: "https://www.manhattanmanor.com/tour/",
+    viewVirtualTour: "https://rosieogradys.com/private-event",
     description: `
     <h4>${t("venues.size")}</h4>
     <ul>
@@ -64,11 +49,10 @@ const mmVenues = [
     `,
   },
   {
-    id: 3,
+    id: 4,
     name: "Taft Bar",
     mainImage: TaftBar,
-    gallery: taftBarGallery,
-    viewVirtualTour: "https://www.manhattanmanor.com/tour/",
+    viewVirtualTour: "https://rosieogradys.com/private-event",
     description: `
     <h4>${t("venues.size")}</h4>
     <ul>
@@ -81,11 +65,10 @@ const mmVenues = [
     `,
   },
   {
-    id: 4,
+    id: 5,
     name: "Private Dinning Room",
     mainImage: PrivateDinningRoom,
-    gallery: privateDinningRoomGallery,
-    viewVirtualTour: "https://www.manhattanmanor.com/tour/",
+    viewVirtualTour: "https://rosieogradys.com/private-event",
     description: `
     <h4>${t("venues.size")}</h4>
     <ul>
@@ -151,7 +134,7 @@ const restaurantVenues = [
   <div class="row venues">
     {
       mmVenues.map((venue) => (
-        <div class="col-12 col-md-6 d-flex justify-content-center">
+        <div class="col-12 col-md-6 d-flex justify-content-center mb-5">
           <Venue {...venue} />
         </div>
       ))

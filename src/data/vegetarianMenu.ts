@@ -8,7 +8,7 @@ const vegetarianMenu: RestaurantMenu = {
       dishes: [
         {
           name: "Grilled Vegetable Napoleon",
-          description: "with beet salad",
+          description: "With beet salad",
         },
       ],
     },

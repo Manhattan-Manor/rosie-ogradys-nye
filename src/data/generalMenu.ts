@@ -8,7 +8,7 @@ const generalMenu: RestaurantMenu = {
       dishes: [
         {
           name: "Maryland Crab Cake",
-          description: "Tangy Remoulade Sauce",
+          description: "With Tangy Remoulade Sauce Over a Bed of Frisée Sala",
         },
       ],
     },

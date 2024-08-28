@@ -24,7 +24,7 @@ import { Image } from "@astrojs/image/components";
         <li>
           <a
             id="nye-link"
-            href="https://www.rosieogradys.com/newyear"
+            href="http://rosieogradys.com"
             rel="noopener noreferrer">{t("common.nye.abbreviated")}</a
           >
         </li>
@@ -231,7 +231,7 @@ import { Image } from "@astrojs/image/components";
     } else {
       // If we are on desktop, change SPA to ESPAÑOL and NYE to NEW YEAR'S EVE
       if (spaLink) spaLink.innerHTML = t("common.spanish") || "ESPAÑOL";
-      if (nyeLink) nyeLink.innerHTML = t("buy-nye-tickets") || "BUY NYE TICKETS";
+      if (nyeLink) nyeLink.innerHTML = t("buy-nye-tickets") || "ROSIE O'GRADYS";
     }
   };
 

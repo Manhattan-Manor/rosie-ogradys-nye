@@ -1,7 +1,6 @@
 ---
 import RestaurantMenu from "../RestaurantMenu.astro";
 import generalMenu from "../../data/generalMenu";
-import { localizePath } from "astro-i18next";
 import glutenFreeMenu from "../../data/glutenFreeMenu";
 import vegetarianMenu from "../../data/vegetarianMenu";
 import { t } from "i18next";
@@ -9,17 +8,7 @@ import Tickets from "../Tickets.astro";
 ---
 
 <section class="container-fluid" id="menus-section">
-  <h1 class="text-center">{t("party")}</h1>
   <h1 class="text-center">{t("menu")}</h1>
-  <h1 class="text-center">&</h1>
-  <h1 class="text-center">{t("tickets")}</h1>
-  <p class="text-center">
-    {t("party-menu-tickets.description")}
-  </p>
-  <a
-    href={localizePath("/faq")}
-    class="d-block text-center">{t("faq-general-instructions")}</a
-  >
 
   <div class="row mt-5">
     <div class="col-12 col-lg-4">

@@ -1,11 +1,18 @@
 ---
 import i18next, { t } from "i18next";
+import { localizePath } from "astro-i18next";
 import Stamp from "../Stamp.astro";
 ---
 
 <section class="container">
   <h1 class="text-center mb-5" data-aos="fade-up">{t("common.our-party")}</h1>
-
+  <p class="text-center">
+    {t("party-menu-tickets.description")}
+  </p>
+  <a
+    href={localizePath("/faq")}
+    class="d-block text-center">{t("faq-general-instructions")}</a
+  >
   <table class="our-party-table">
     <thead>
       <tr>

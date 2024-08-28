@@ -1,0 +1,54 @@
+---
+import { t } from "i18next";
+---
+  
+<div class="row justify-content-center prices">
+    <div class="col-6 text-center">
+        <h2>BAR</h2>
+        <p class="text-start d-flex justify-content-between align-items-center">
+        {t("seated-at-the-bar")}
+        <a href="https://nye.rosieogradys.com/stripe/buyyourticket.html" target="_blank" class="btn btn-primary me-5">$395</a>
+        </p>
+        <hr>
+        <p class="text-start d-flex justify-content-between align-items-center mt-3">
+        {t("seated-at-the-hightops")} 
+        <a href="https://nye.rosieogradys.com/stripe/buyyourticket.html" target="_blank" class="btn btn-primary me-5">$395</a>
+        </p>
+        <hr>
+    </div>
+    <div class="col-6 text-center">
+        <h2>VENUES</h2>
+        <p class="text-start d-flex justify-content-between align-items-center">
+        {t("gourmet-dinner-vip")}
+        <a href="https://nye.rosieogradys.com/stripe/buyyourticket.html" target="_blank" class="btn btn-primary me-5">$749</a>
+        </p>
+        <hr>
+        <p class="text-start d-flex justify-content-between align-items-center mt-3">
+        {t("gourmet-dinner")}
+        <a href="https://nye.rosieogradys.com/stripe/buyyourticket.html" target="_blank" class="btn btn-primary me-5">$695</a>
+        </p>
+        <hr>
+    </div>
+</div>
+
+<style lang="scss">
+  @import '../assets/styles/_colors.scss';
+
+  .prices {
+    hr {
+      border-color: $primary;
+      opacity: 1;
+
+      @media (min-width: 992px) {
+        max-width: 650px;
+      }
+    }
+    
+    p {
+      display: flex;
+      color: white;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+</style>

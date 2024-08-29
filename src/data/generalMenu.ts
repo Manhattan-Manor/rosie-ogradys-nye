@@ -1,7 +1,7 @@
 import RestaurantMenu from "../classes/RestaurantMenu";
 
 const generalMenu: RestaurantMenu = {
-  name: "Menu",
+  name: "Menu 1",
   categories: [
     {
       name: "Appetizer",

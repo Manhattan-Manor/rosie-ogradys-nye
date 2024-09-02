@@ -5,9 +5,7 @@ import Stamp from "../Stamp.astro";
 
 <section class="container">
   <h1 class="text-center mb-5" data-aos="fade-up">{t("common.our-party")}</h1>
-  <p class="text-center">
-    {t("party-menu-tickets.description")}
-  </p>
+  <p class="text-center" set:html={t("party-menu-tickets.description")} />
   <a target="_blank" href="/faq.pdf" class="d-block text-center"
     >{t("faq-general-instructions")}</a
   >

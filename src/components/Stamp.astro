@@ -3,12 +3,13 @@ interface Props {
   label: string;
   aosAnimation?: string;
   aosDelay?: string;
+  className?: string;
 }
 
-const { label, aosAnimation = "fade-up", aosDelay } = Astro.props;
+const { label, aosAnimation = "fade-up", aosDelay, className } = Astro.props;
 ---
 
-<div class="stamp" data-aos={aosAnimation} data-aos-delay={aosDelay}>
+<div class={`${className} stamp`} data-aos={aosAnimation} data-aos-delay={aosDelay}>
   {label}
 </div>
 

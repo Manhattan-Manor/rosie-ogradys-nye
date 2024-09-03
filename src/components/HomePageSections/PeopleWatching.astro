@@ -1,28 +1,41 @@
 ---
-import { Image } from "@astrojs/image/components";
-import getCircles from "../../data/peopleWatchingCircles";
-import i18next, { t } from "i18next";
-
-const peopleWatchingCircles = getCircles(i18next.language);
+import { t } from "i18next";
+import TitledStamp from "../TitledStamp.astro";
 ---
 
 <section class="container">
-  <h1 class="text-center mb-5" data-aos="fade-up">{t("common.people-watching")}</h1>
+  <h1 class="text-center mb-5" data-aos="fade-up">
+    {t("common.people-watching")}
+  </h1>
 
   <div class="row">
-    {
-      peopleWatchingCircles.map((circle, i) => {
-        const animationDelay = i * 200;
-        return (
-          <div
-            class="col-12 col-md-3 d-flex justify-content-center mt-4 mt-md-0"
-            data-aos="fade-up"
-            data-aos-delay={animationDelay}
-          >
-            <Image src={circle.img} alt={circle.alt} width={150} height={150} />
-          </div>
-        );
-      })
-    }
+    <div
+      class="col-12 col-md-3 d-flex justify-content-center mt-4 mt-md-0"
+      data-aos="fade-up"
+      data-aos-delay="200"
+    >
+      <TitledStamp title="+1 Billion" label="world wide" titleFontSize="25px" />
+    </div>
+    <div
+      class="col-12 col-md-3 d-flex justify-content-center mt-4 mt-md-0"
+      data-aos="fade-up"
+      data-aos-delay="400"
+    >
+      <TitledStamp title="+100 Million" label="In the USA" titleFontSize="22px" />
+    </div>
+    <div
+      class="col-12 col-md-3 d-flex justify-content-center mt-4 mt-md-0"
+      data-aos="fade-up"
+      data-aos-delay="600"
+    >
+      <TitledStamp title="+1 Million" label="at Times Square" titleFontSize="25px" />
+    </div>
+    <div
+      class="col-12 col-md-3 d-flex justify-content-center mt-4 mt-md-0"
+      data-aos="fade-up"
+      data-aos-delay="600"
+    >
+      <TitledStamp title="+500 Guests" label="at our venues" titleFontSize="22px" />
+    </div>
   </div>
 </section>

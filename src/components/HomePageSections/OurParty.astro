@@ -9,38 +9,67 @@ import Stamp from "../Stamp.astro";
   <a target="_blank" href="/faq.pdf" class="d-block text-center"
     >{t("faq-general-instructions")}</a
   >
-  <table class="our-party-table">
-    <thead>
-      <tr>
-        <th colspan="2">Bar</th>
-        <th colspan="2">Dinner</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><Stamp label="9pm to 1am" /></td>
-        <td><Stamp label="4 Hours Premium Open Bar" /></td>
-        <td><Stamp label="8pm to 1am" /></td>
-        <td><Stamp label="5 Hours Premium Open Bar" /></td>
-      </tr>
-      <tr>
-        <td><Stamp label="Bar Food" /></td>
-        <td><Stamp label="DJ Music & Dancing & After Party" /></td>
-        <td><Stamp label="Premium Dinner" /></td>
-        <td><Stamp label="DJ Music & Dancing & After Party" /></td>
-      </tr>
-      <tr>
-        <td><Stamp label="Amenities Photobooth and more" /></td>
-        <td><Stamp label="Street Live View of the Ball Drop" /></td>
-        <td><Stamp label="Amenities Photobooth and more" /></td>
-        <td><Stamp label="Street Live View of the Ball Drop" /></td>
-      </tr>
-      <tr>
-        <td><Stamp label="View of the Street and Crowds" /></td>
-        <td colspan="3"><Stamp label="View of the Street and Crowds" /></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-6">
+        <h4 class="text-center">Bar</h4>
+      </div>
+      <div class="col-6">
+        <h4 class="text-center">Dinner</h4>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-6 col-md-3">
+        <Stamp label="9pm to 1am" />
+      </div>
+      <div class="col-6 col-md-3">
+        <Stamp label="4 Hours Premium Open Bar" />
+      </div>
+      <div class="col-6 col-md-3">
+        <Stamp label="8pm to 1am" />
+      </div>
+      <div class="col-6 col-md-3">
+        <Stamp label="5 Hours Premium Open Bar" />
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-6 col-md-3">
+        <Stamp label="Bar Food" />
+      </div>
+      <div class="col-6 col-md-3">
+        <Stamp label="DJ Music & Dancing & After Party" />
+      </div>
+      <div class="col-6 col-md-3">
+        <Stamp label="Premium Dinner" />
+      </div>
+      <div class="col-6 col-md-3">
+        <Stamp label="DJ Music & Dancing & After Party" />
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-6 col-md-3">
+        <Stamp label="Amenities Photobooth and more" />
+      </div>
+      <div class="col-6 col-md-3">
+        <Stamp label="Street Live View of the Ball Drop" />
+      </div>
+      <div class="col-6 col-md-3">
+        <Stamp label="Amenities Photobooth and more" />
+      </div>
+      <div class="col-6 col-md-3">
+        <Stamp label="Street Live View of the Ball Drop" />
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-6 col-md-3">
+        <Stamp label="View of the Street and Crowds" />
+      </div>
+      <div class="col-6 col-md-9">
+        <Stamp label="View of the Street and Crowds" />
+      </div>
+    </div>
+  </div>
 </section>
 
 <style>

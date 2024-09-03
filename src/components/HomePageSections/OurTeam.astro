@@ -1,19 +1,21 @@
 ---
 import { Image } from "@astrojs/image/components";
-import AmandaPilarSmithImg from "../../assets/images/team/Amanda_Smith.webp";
+import AmandaImg from "../../assets/images/team/Amanda_Smith.webp";
+import DiegoImg from "../../assets/images/team/Diego.jpeg";
 import { t } from "i18next";
 ---
 
 <section class="container" id="team-section">
   <h1 class="text-center fw-bold mb-4" data-aos="fade-up">{t("our-team")}</h1>
+  <p class="text-center">{t("our-team.description")}</p>
 
-  <div class="d-flex justify-content-between">
+  <div class="d-flex justify-content-between mt-5">
     <div
       class="text-center d-flex justify-content-center flex-column align-items-center"
     >
       <Image
         class="d-block mx-md-auto mw-100 mb-3"
-        src={AmandaPilarSmithImg}
+        src={AmandaImg}
         alt="Amanda"
         width={250}
         height={250}
@@ -26,7 +28,7 @@ import { t } from "i18next";
     >
       <Image
         class="d-block mx-md-auto mw-100 mb-3"
-        src={AmandaPilarSmithImg}
+        src={DiegoImg}
         alt="Diego"
         width={250}
         height={250}
@@ -39,7 +41,7 @@ import { t } from "i18next";
     >
       <Image
         class="d-block mx-md-auto mw-100 mb-3"
-        src={AmandaPilarSmithImg}
+        src={AmandaImg}
         alt="Michelle"
         width={250}
         height={250}

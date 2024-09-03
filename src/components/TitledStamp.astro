@@ -1,0 +1,57 @@
+---
+interface Props {
+  title: string;
+  label: string;
+  titleFontSize?: string;
+  aosAnimation?: string;
+  aosDelay?: string;
+}
+
+const {
+  title,
+  label,
+  titleFontSize,
+  aosAnimation = "fade-up",
+  aosDelay,
+} = Astro.props;
+---
+
+<div class="stamp" data-aos={aosAnimation} data-aos-delay={aosDelay}>
+  <span
+    class="stamp-title"
+    style={titleFontSize ? "font-size: " + titleFontSize : ""}
+  >
+    {title}
+  </span>
+  <span class="text-uppercase d-inline stamp-label">
+    {label}
+  </span>
+</div>
+
+<style>
+  .stamp {
+    width: 150px;
+    height: 150px;
+    background-color: #1a304c;
+    color: #fff;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border: 6px solid #bc9d00;
+    padding: 5px;
+    margin: 0 auto;
+  }
+
+  .stamp-title {
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .stamp-label {
+    font-size: 18px;
+  }
+</style>

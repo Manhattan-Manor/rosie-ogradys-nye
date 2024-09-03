@@ -70,7 +70,7 @@ jobs:
       - name: Deploy to SSH server
         uses: SamKirkland/web-deploy@v1
         with:
-            target-server: james-wilson.dreamhost.com
+            target-server: iad1-shared-e1-16.dreamhost.com
             remote-user: axellr992
             private-ssh-key: ${{ secrets.SSH_KEY }}
             destination-path: ~/nye.rosieogradys.com/

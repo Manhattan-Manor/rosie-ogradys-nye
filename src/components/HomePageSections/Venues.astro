@@ -1,9 +1,9 @@
 ---
 import restaurantMain from "../../assets/images/venues/restaurant/main.jpg";
-import ManhattanMain from "../../assets/images/venues/manhattan-manor/manhattan-manor.jpg"
-import BroadWayRoom from "../../assets/images/venues/broadway-room/broadway-room.jpg"
-import TaftBar from "../../assets/images/venues/taft-bar/taft-bar.jpg"
-import PrivateDinningRoom from "../../assets/images/venues/private-dinning-room/private-dinning-room.jpg"
+import ManhattanMain from "../../assets/images/venues/manhattan-manor/manhattan-manor.jpg";
+import BroadWayRoom from "../../assets/images/venues/broadway-room/broadway-room.jpg";
+import TaftBar from "../../assets/images/venues/taft-bar/taft-bar.jpg";
+import PrivateDinningRoom from "../../assets/images/venues/private-dinning-room/private-dinning-room.jpg";
 import Venue from "../Venue.astro";
 import { t } from "i18next";
 
@@ -106,7 +106,6 @@ const restaurantVenues = [
     `,
   },
 ];
-
 ---
 
 <section class="container" id="venues-section">
@@ -115,7 +114,7 @@ const restaurantVenues = [
   <!-- The restaurant venues -->
   <p data-aos="fade-up">
     <span class="d-block mb-3 fw-bold">{t("the-restaurant")}</span>
-    {t("the-restaurant.description")}
+    <span set:html={t("the-restaurant.description")} />
   </p>
 
   <div class="row venues">

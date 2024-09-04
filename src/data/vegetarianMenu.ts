@@ -8,7 +8,7 @@ const vegetarianMenu: RestaurantMenu = {
       dishes: [
         {
           name: "Grilled Vegetable Napoleon",
-          description: "With beet salad",
+          description: "With red pepper coulis",
         },
       ],
     },
@@ -22,7 +22,7 @@ const vegetarianMenu: RestaurantMenu = {
       ],
     },
     {
-      name: "Main Course (Choose one)",
+      name: "Main Course",
       dishes: [
         {
           name: "Wild Mushroom Ravioli (V)",

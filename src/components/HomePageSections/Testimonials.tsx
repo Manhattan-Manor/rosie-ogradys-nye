@@ -42,7 +42,7 @@ const Testimonials: FC = () => {
             <p className="testimonial">
               {testimonial.testimonial}
               <span>{testimonial.name}</span>
-              {testimonial.position && <span>{testimonial.position}</span>}
+              {/* {testimonial.position && <span>{testimonial.position}</span>} */}
             </p>
           </div>
         ))}

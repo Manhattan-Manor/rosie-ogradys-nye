@@ -77,12 +77,3 @@ jobs:
             password: ${{ secrets.SFTP_PASSWORD }} 
             local_path: '${{ env.BUILD_PATH }}/dist/'
             remote_path: 'nye.rosieogradys.com/'
-      # - name: Deploy to SSH server
-      #   uses: SamKirkland/web-deploy@v1
-      #   with:
-      #       target-server: iad1-shared-e1-16.dreamhost.com
-      #       remote-user: axellr992
-      #       private-ssh-key: ${{ secrets.SSH_KEY }}
-      #       destination-path: ~/nye.rosieogradys.com/
-      #       source-path: ${{ env.BUILD_PATH }}/dist/
-      #   id: deployment

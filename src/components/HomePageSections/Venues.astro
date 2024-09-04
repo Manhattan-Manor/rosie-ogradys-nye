@@ -149,22 +149,8 @@ const restaurantVenues = [
 <section class="container" id="venues-section">
   <h1 data-aos="fade-up">{t("venues")}</h1>
 
-  <!-- The restaurant venues -->
-  <p data-aos="fade-up">
-    <span class="d-block mb-3 fw-bold">{t("the-restaurant")}</span>
-    <span set:html={t("the-restaurant.description")} />
-  </p>
-
-  <div class="row venues">
-    <div class="col-12 d-flex justify-content-center">
-      <Venue {...restaurantVenues[0]} />
-    </div>
-  </div>
-  <!-- End the restaurant venues -->
-
   <!-- Manhattan Manor Venues -->
   <p data-aos="fade-up">
-    <span class="d-block mb-3">Manhattan Manor</span>
     {t("venues.description")}
   </p>
 
@@ -178,8 +164,6 @@ const restaurantVenues = [
     }
   </div>
   <!-- End Manhattan Manor Venues -->
-
-  <a href="#contact-us-section" class="d-block mt-5">{t("private-event")}</a>
 </section>
 
 <style lang="scss">

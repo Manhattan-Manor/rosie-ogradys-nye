@@ -4,14 +4,16 @@ import ManhattanMain from "../../assets/images/venues/manhattan-manor/manhattan-
 import BroadWayRoom from "../../assets/images/venues/broadway-room/broadway-room.jpg";
 import TaftBar from "../../assets/images/venues/taft-bar/taft-bar.jpg";
 import PrivateDinningRoom from "../../assets/images/venues/private-dinning-room/private-dinning-room.jpg";
+import MainDiningroom from "../../assets/images/venues/main-dining-room.jpg";
+import MainBar from "../../assets/images/venues/main-bar.jpg";
 import Venue from "../Venue.astro";
 import { t } from "i18next";
 
 const mmVenues = [
   {
     id: 1,
-    name: "Manhattan Manor",
-    mainImage: ManhattanMain,
+    name: "Main Dining room",
+    mainImage: MainDiningroom,
     viewVirtualTour: "https://rosieogradys.com/private-event",
     description: `
     <h4>${t("venues.size")}</h4>
@@ -25,6 +27,23 @@ const mmVenues = [
       <li>110 ${t("venues.buffet")}</li>
       <li>160 ${t("venues.theater")}</li>
       <li>120 ${t("venues.theater-with-refreshment")}</li>
+    </ul>
+    `,
+  },
+  {
+    id: 5,
+    name: "Private Dining Room",
+    mainImage: PrivateDinningRoom,
+    viewVirtualTour: "https://rosieogradys.com/private-event",
+    description: `
+    <h4>${t("venues.size")}</h4>
+    <ul>
+      <li>288 ${t("venues.square-feet")} - 24 x 12 Feet</li>
+    </ul>
+    <h4>${t("venues.capacity")}</h4>
+    <ul>
+      <li>24 ${t("venues.long-table")}</li>
+      <li>45 ${t("venues.individual-table")}</li>
     </ul>
     `,
   },
@@ -49,9 +68,29 @@ const mmVenues = [
     `,
   },
   {
+    id: 1,
+    name: "Manhattan Manor",
+    mainImage: ManhattanMain,
+    viewVirtualTour: "https://rosieogradys.com/private-event",
+    description: `
+    <h4>${t("venues.size")}</h4>
+    <ul>
+      <li>2,520 ${t("venues.square-feet")} - 70 x 36 Feet</li>
+    </ul>
+    <h4>${t("venues.capacity")}</h4>
+    <ul>
+      <li>150 ${t("venues.cocktail")}</li>
+      <li>130 ${t("venues.seated")}</li>
+      <li>110 ${t("venues.buffet")}</li>
+      <li>160 ${t("venues.theater")}</li>
+      <li>120 ${t("venues.theater-with-refreshment")}</li>
+    </ul>
+    `,
+  },
+  {
     id: 4,
-    name: "Taft Bar",
-    mainImage: TaftBar,
+    name: "Main Bar",
+    mainImage: MainBar,
     viewVirtualTour: "https://rosieogradys.com/private-event",
     description: `
     <h4>${t("venues.size")}</h4>
@@ -65,19 +104,18 @@ const mmVenues = [
     `,
   },
   {
-    id: 5,
-    name: "Private Dinning Room",
-    mainImage: PrivateDinningRoom,
+    id: 4,
+    name: "Taft Bar",
+    mainImage: TaftBar,
     viewVirtualTour: "https://rosieogradys.com/private-event",
     description: `
     <h4>${t("venues.size")}</h4>
     <ul>
-      <li>288 ${t("venues.square-feet")} - 24 x 12 Feet</li>
+      <li>480 ${t("venues.square-feet")} - 24 x 20 Feet</li>
     </ul>
     <h4>${t("venues.capacity")}</h4>
     <ul>
-      <li>24 ${t("venues.long-table")}</li>
-      <li>45 ${t("venues.individual-table")}</li>
+      <li>40 ${t("venues.cocktail")}</li>
     </ul>
     `,
   },

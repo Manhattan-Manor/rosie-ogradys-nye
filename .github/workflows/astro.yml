@@ -2,7 +2,7 @@
 #
 # To get started with Astro see: https://docs.astro.build/en/getting-started/
 #
-name: Deploy Astro site through SSH
+name: Deploy Astro site through SFTP
 
 on:
   # Runs on pushes targeting the default branch

@@ -67,12 +67,22 @@ jobs:
         working-directory: ${{ env.BUILD_PATH }}
       - name: List
         run: ls -la ${{ env.BUILD_PATH }}
-      - name: Deploy to SSH server
-        uses: SamKirkland/web-deploy@v1
+      - name: Deploy to SFTP server
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-            target-server: iad1-shared-e1-16.dreamhost.com
-            remote-user: axellr992
-            private-ssh-key: ${{ secrets.SSH_KEY }}
-            destination-path: ~/nye.rosieogradys.com/
-            source-path: ${{ env.BUILD_PATH }}/dist/
-        id: deployment
+            username: 'axellr992'
+            server: 'iad1-shared-e1-16.dreamhost.com'
+            port: 22
+            ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+            password: ${{ secrets.SFTP_PASSWORD }} 
+            local_path: './static/*'
+            remote_path: '/var/www/app'
+      # - name: Deploy to SSH server
+      #   uses: SamKirkland/web-deploy@v1
+      #   with:
+      #       target-server: iad1-shared-e1-16.dreamhost.com
+      #       remote-user: axellr992
+      #       private-ssh-key: ${{ secrets.SSH_KEY }}
+      #       destination-path: ~/nye.rosieogradys.com/
+      #       source-path: ${{ env.BUILD_PATH }}/dist/
+      #   id: deployment

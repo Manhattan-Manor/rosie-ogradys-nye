@@ -23,7 +23,7 @@ const generalMenu: RestaurantMenu = {
       ],
     },
     {
-      name: "Main Course (Choose one)",
+      name: "Main Course",
       dishes: [
         {
           name: "Prime Filet Mignon",

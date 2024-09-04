@@ -75,8 +75,8 @@ jobs:
             port: 22
             ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
             password: ${{ secrets.SFTP_PASSWORD }} 
-            local_path: './static/*'
-            remote_path: '/var/www/app'
+            local_path: '${{ env.BUILD_PATH }}/dist/'
+            remote_path: '~/nye.rosieogradys.com/'
       # - name: Deploy to SSH server
       #   uses: SamKirkland/web-deploy@v1
       #   with:

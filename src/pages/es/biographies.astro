@@ -1,0 +1,77 @@
+---
+import { Image } from "@astrojs/image/components";
+import InfoPages from "../../layouts/InfoPages.astro";
+import AmandaImg from "../../assets/images/team/amanda.jpg";
+import DiegoImg from "../../assets/images/team/diego.jpeg";
+import MichelleImg from "../../assets/images/team/michelle.png";
+---
+
+<InfoPages title="Biografías">
+  <div class="container content">
+    <h1>Biografías</h1>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <Image
+          src={AmandaImg}
+          alt="Amanda Smith"
+          style="width: 120px; height: 120px; object-position: top; object-fit: cover;"
+          format="webp"
+        />
+        <h2 class="mt-3">Amanda Smith</h2>
+        <p class="fw-bold">Directora de Ventas de Eventos</p>
+
+        <p>
+          Amanda tiene más de 15 años trabajando en la industria de eventos y ha
+          planeado muchos eventos divertidos como nuestra fiesta de Año Nuevo
+          cuando dirigía su propia empresa de catering. Estás en buenas manos.
+        </p>
+        <hr />
+      </div>
+      <div class="col-12">
+        <Image
+          src={DiegoImg}
+          alt="Diego Von Schmeling"
+          width={120}
+          height={120}
+          format="webp"
+        />
+        <h2 class="mt-3">Diego Von Schmeling</h2>
+        <p class="fw-bold">Gerente</p>
+
+        <p>
+          Diego ha estado con Rosie's por más de 14 años y dirige un barco
+          apretado. Anteriormente, tenía su propio café y restaurante, entre
+          otras cosas. Será tu primer contacto cuando llegues en la víspera de
+          Año Nuevo.
+        </p>
+        <hr />
+      </div>
+      <div class="col-12">
+        <Image
+          src={MichelleImg}
+          alt="Michelle Tanhoff"
+          width={120}
+          height={120}
+          format="webp"
+        />
+        <h2 class="mt-3">Michelle Tanhoff</h2>
+        <p class="fw-bold">Gerente</p>
+
+        <p>
+          Michelle es la nueva incorporación a Rosie's pero ha trabajado para
+          muchas instituciones de Nueva York, incluyendo la Ópera Metropolitana,
+          R Bar, entre otros. Verás a Michelle en todas partes en la fiesta.
+        </p>
+        <hr />
+      </div>
+    </div>
+  </div>
+</InfoPages>
+
+<style>
+  .content {
+    margin-top: 5rem;
+    min-height: 100vh;
+  }
+</style>

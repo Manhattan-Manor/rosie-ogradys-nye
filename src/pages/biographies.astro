@@ -1,0 +1,77 @@
+---
+import { Image } from "@astrojs/image/components";
+import InfoPages from "../layouts/InfoPages.astro";
+import AmandaImg from "../assets/images/team/amanda.jpg";
+import DiegoImg from "../assets/images/team/diego.jpeg";
+import MichelleImg from "../assets/images/team/michelle.png";
+---
+
+<InfoPages title="Biographies">
+  <div class="container content">
+    <h1>Biographies</h1>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <Image
+          src={AmandaImg}
+          alt="Amanda Smith"
+          style="width: 120px; height: 120px; object-position: top; object-fit: cover;"
+          format="webp"
+        />
+        <h2 class="mt-3">Amanda Smith</h2>
+        <p class="fw-bold">Director of Event Sales</p>
+
+        <p>
+          Amanda has more than 15 years working in the event industry and
+          planned many fun events like our New Year's Eve party when she ran a
+          catering company of her own. You're in great hands.
+        </p>
+        <hr />
+      </div>
+      <div class="col-12">
+        <Image
+          src={DiegoImg}
+          alt="Diego Von Schmeling"
+          width={120}
+          height={120}
+          format="webp"
+        />
+        <h2 class="mt-3">Diego Von Schmeling</h2>
+        <p class="fw-bold">Manager</p>
+
+        <p>
+          Diego has been with Rosie's for more than 14 years and runs a tight
+          ship. Previously he owned his own café and restaurant among other
+          things. He will be your first contact when you arrive on New Year's
+          Eve.
+        </p>
+        <hr />
+      </div>
+      <div class="col-12">
+        <Image
+          src={MichelleImg}
+          alt="Michelle Tanhoff"
+          width={120}
+          height={120}
+          format="webp"
+        />
+        <h2 class="mt-3">Michelle Tanhoff</h2>
+        <p class="fw-bold">Manager</p>
+
+        <p>
+          Michelle is the newest addition to Rosie's but has worked for many New
+          York institutions including the Metropolitan Opera, R Bar, among
+          others. You will see Michelle everywhere at the party.
+        </p>
+        <hr />
+      </div>
+    </div>
+  </div>
+</InfoPages>
+
+<style>
+  .content {
+    margin-top: 5rem;
+    min-height: 100vh;
+  }
+</style>

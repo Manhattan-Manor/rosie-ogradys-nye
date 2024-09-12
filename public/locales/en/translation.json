@@ -99,6 +99,9 @@
   "our-services.wedding.description": "Two magnificent venues to celebrate your special day! Guests will bask in natural light during the ceremony streaming through the skylights, then enjoy cocktails in the elegant Manhattan Club, followed by a memorable reception in the brand new Skylight Room with its exposed brick and magnificent chandeliers. A full service catering facility with you as our only focus.",
   "our-team": "Our Team",
   "our-team.description": "We look forward to welcoming you for this festive celebration!",
+  "our-team.amanda.role": "Director of Event Sales",
+  "our-team.diego.role": "Manager",
+  "our-team.michelle.role": "Manager",
   "preferred-vendors": "Preferred Vendors",
   "privacy-policy": "Privacy Policy",
   "specs": "Specs",
@@ -154,5 +157,7 @@
   "dinner": "Dinner",
   "tickets.children": "Children",
   "tickets.children.description": "Child (Under 12 years) each ticket. Accompanying dinner ticket only - not at bar",
-  "entertainment": "Entertainment"
+  "entertainment": "Entertainment",
+  "entertainment.description": "What better way to spend a fun New Year's Eve than with three amazing New York entertainers.<br><br>The duo Acute Inflections' music and melody has been filling the hearts of audiences in venues all over the city (and world)!<br><br>Rhythm in Motion DJ team is renowned for their mix up traditional, original, and perfectly picked tunes that draw people on to the dance floor and party all night long.<br><br>LA Photo Party is a modern take on the classic photo booth experience; offering a range of classic to cutting-edge services that connect brands to their audiences.",
+  "biographies": "Biographies"
 }

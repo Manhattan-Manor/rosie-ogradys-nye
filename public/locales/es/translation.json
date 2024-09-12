@@ -98,6 +98,9 @@
   "our-services.wedding.description": "¡Dos locales únicos para celebrar su día especial! Los invitados disfrutarán de luz natural durante la ceremonia que fluye a través de los tragaluces, luego disfrutarán de cócteles en el elegante Manhattan Club, seguido de una recepción memorable en la nueva sala Skylight. Manhattan Manor ofrece catering de servicio completo y promete una celebración que recordaran para siempre.",
   "our-team": "Nuestro equipo",
   "our-team.description": "¡Esperamos darle la bienvenida a esta celebración festiva!",
+  "our-team.amanda.role": "Directora de ventas de eventos",
+  "our-team.diego.role": "Gerente",
+  "our-team.michelle.role": "Gerente",
   "preferred-vendors": "Vendedores Preferidos",
   "privacy-policy": "Política de Privacidad",
   "specs": "Especificaciones",
@@ -152,5 +155,7 @@
   "gourmet-dinner": "Gourmet Dinner",
   "tickets.children": "Niños",
   "tickets.children.description": "Niños (Menores de 12 años) por ticket. Acompañando tickets de cena únicamente - no en el bar.",
-  "entertainment": "Entretenimiento"
+  "entertainment": "Entretenimiento",
+  "entertainment.description": "¿Qué mejor manera de pasar una divertida Nochevieja que con tres increíbles artistas de Nueva York?<br><br>¡La música y la melodía del dúo Acute Inflections han llenado los corazones de las audiencias en lugares de toda la ciudad (y del mundo)!<br><br>El equipo de DJ Rhythm in Motion es famoso por su mezcla de melodías tradicionales, originales y perfectamente elegidas que atraen a la gente a la pista de baile y a la fiesta toda la noche.<br><br>LA Photo Party es una versión moderna de la clásica experiencia de fotomatón; ofrece una gama de servicios clásicos y de vanguardia que conectan a las marcas con sus audiencias.",
+  "biographies": "Biografías"
 }

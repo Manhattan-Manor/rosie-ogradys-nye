@@ -1,33 +1,56 @@
 ---
 import { t } from "i18next";
-import BloombergImg from "../../assets/images/bloomberg.png";
+import AcuteInflectionsImg from "../../assets/images/acute-inflections.jpeg";
+import BoothImg from "../../assets/images/booth.jpg";
 import RhythmImg from "../../assets/images/rhythm-in-motion.jpg";
 import { Image } from "@astrojs/image/components";
 ---
 
 <div class="container mt-5" id="entertainment">
   <h1 class="text-center">{t("entertainment")}</h1>
+  <p class="text-center" set:html={t("entertainment.description")} />
 
-  <div class="row">
-    <div class="col-12 col-lg-6 text-center">
+  <div class="row mt-5">
+    <div class="col-12 col-lg-4 text-center">
       <a
         href="https://acuteinflections.com/"
         rel="noopener noreferrer"
         target="_blank"
       >
-        <Image src={BloombergImg} alt="Acute Inflections site" style="height: 320px; width: 390px; object-position: left; object-fit: cover;"  />
+        <Image
+          src={AcuteInflectionsImg}
+          alt="Acute Inflections site"
+          height={320}
+          width={390}
+        />
         <p class="mt-3">Acute Inflections site</p>
       </a>
     </div>
-    <div class="col-12 col-lg-6 text-center">
+    <div class="col-12 col-lg-4 text-center">
       <a
         href="https://www.rhythminmotion.biz/"
         rel="noopener noreferrer"
         target="_blank"
       >
-        <Image src={RhythmImg} alt="Rhythm In Motion" height={320} width={390} />
+        <Image
+          src={RhythmImg}
+          alt="Rhythm In Motion"
+          height={320}
+          width={390}
+        />
 
         <p class="mt-3">Rhythm In Motion</p>
+      </a>
+    </div>
+    <div class="col-12 col-lg-4 text-center">
+      <a
+        href="https://laphotoparty.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <Image src={BoothImg} alt="LAPhotoParty" height={320} width={390} />
+
+        <p class="mt-3">LAPhotoParty</p>
       </a>
     </div>
   </div>

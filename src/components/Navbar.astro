@@ -22,7 +22,7 @@ import { Image } from "@astrojs/image/components";
           <a
             id="nye-link"
             href="http://rosieogradys.com"
-            rel="noopener noreferrer">{t("common.nye.abbreviated")}</a
+            rel="noopener noreferrer">Rosie O'Grady's</a
           >
         </li>
         <li>
@@ -231,14 +231,6 @@ import { Image } from "@astrojs/image/components";
       if (nyeLink) nyeLink.innerHTML = t("buy-nye-tickets") || "ROSIE O'GRADYS";
     }
   };
-
-  const spaLink = document.querySelector("#spa-link") as HTMLElement;
-  const nyeLink = document.querySelector("#nye-link") as HTMLElement;
-  adaptWords(spaLink, nyeLink);
-
-  window.addEventListener("resize", () => {
-    adaptWords(spaLink, nyeLink);
-  });
 
   // Sound button
   const video = document.getElementById("background-video") as HTMLVideoElement;

@@ -218,27 +218,29 @@ import { Image } from "@astrojs/image/components";
     }
   };
 
-  // Check window width on load and detect if we are on mobile, also check on resize
-  const isMobile = () => window.innerWidth <= 760;
-  const adaptWords = (spaLink: HTMLElement, nyeLink: HTMLElement) => {
-    if (isMobile()) {
-      // If we are on mobile, change ESPAÑOL to SPA and NEW YEAR'S EVE to NYE
-      if (spaLink) spaLink.innerHTML = t("common.spanish.abbreviated") || "SPA";
-      if (nyeLink) nyeLink.innerHTML = t("common.nye.abbreviated") || "NYE";
-    } else {
-      // If we are on desktop, change SPA to ESPAÑOL and NYE to NEW YEAR'S EVE
-      if (spaLink) spaLink.innerHTML = t("common.spanish") || "ESPAÑOL";
-      if (nyeLink) nyeLink.innerHTML = t("buy-nye-tickets") || "ROSIE O'GRADYS";
-    }
-  };
+  // Sound button
+  const video = document.getElementById("background-video") as HTMLVideoElement;
+  const soundButton = document.getElementById("sound-btn") as HTMLButtonElement;
 
-  const spaLink = document.querySelector("#spa-link") as HTMLElement;
-  const nyeLink = document.querySelector("#nye-link") as HTMLElement;
-  adaptWords(spaLink, nyeLink);
-
-  window.addEventListener("resize", () => {
-    adaptWords(spaLink, nyeLink);
-  });
+  if (video && soundButton) {
+    soundButton.addEventListener("click", () => {
+      if (video.muted) {
+        video.muted = false;
+        soundButton.innerHTML = `<i class="bi bi-volume-up-fill"></i><span> MUTE</span>`;
+        // Add margin to the icon
+        const icon = soundButton.querySelector("i");
+        if (icon) icon.style.marginRight = "5px";
+        // Set volume to 0.5
+        video.volume = 0.5;
+      } else {
+        video.muted = true;
+        soundButton.innerHTML = `<i class="bi bi-volume-up-fill"></i><span> SOUND</span>`;
+        // Add margin to the icon
+        const icon = soundButton.querySelector("i");
+        if (icon) icon.style.marginRight = "5px";
+      }
+    });
+  }
 
   // Anchor link animation
   document.addEventListener('DOMContentLoaded', () => {
@@ -265,7 +267,7 @@ import { Image } from "@astrojs/image/components";
 
         const checkVisibility = () => {
           const rect = targetElement.getBoundingClientRect();
-          const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+          const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
 
           if (isVisible || userScrolling) {
             clearInterval(intervalId);
@@ -280,27 +282,5 @@ import { Image } from "@astrojs/image/components";
     });
   });
 
-  // Sound button
-  const video = document.getElementById("background-video") as HTMLVideoElement;
-  const soundButton = document.getElementById("sound-btn") as HTMLButtonElement;
-
-  if (video && soundButton) {
-    soundButton.addEventListener("click", () => {
-      if (video.muted) {
-        video.muted = false;
-        soundButton.innerHTML = `<i class="bi bi-volume-up-fill"></i><span> MUTE</span>`;
-        // Add margin to the icon
-        const icon = soundButton.querySelector("i");
-        if (icon) icon.style.marginRight = "5px";
-        // Set volume to 0.5
-        video.volume = 0.5;
-      } else {
-        video.muted = true;
-        soundButton.innerHTML = `<i class="bi bi-volume-up-fill"></i><span> SOUND</span>`;
-        // Add margin to the icon
-        const icon = soundButton.querySelector("i");
-        if (icon) icon.style.marginRight = "5px";
-      }
-    });
-  }
+  
 </script>

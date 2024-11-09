@@ -5,8 +5,8 @@ import BoothImg from "../../assets/images/booth.jpg";
 import RhythmImg from "../../assets/images/rhythm-in-motion.jpg";
 import { Image } from "@astrojs/image/components";
 ---
-
-<div class="container mt-5" id="entertainment">
+ 
+<div class="container mt-5" data-aos="fade-up" id="entertainment">
   <h1 class="text-center">{t("entertainment")}</h1>
   <p class="text-center" set:html={t("entertainment.description")} />
 

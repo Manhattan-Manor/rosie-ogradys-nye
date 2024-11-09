@@ -53,7 +53,7 @@ import MetaPixel from "../components/MetaPixel.astro";
     <slot />
     <script is:inline async src="https://www.google.com/recaptcha/api.js"
     ></script>
-    <!-- <script defer src="bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="bootstrap"></script>
     <script>
       import AOS from "aos";
 
@@ -71,7 +71,7 @@ import MetaPixel from "../components/MetaPixel.astro";
         wrapAround: true,
       });
     </script>
-    <!-- Custom global styles -->
+    <!-- Custom global scripts -->
     <script src="../global.ts"></script>
   </body>
 </html>

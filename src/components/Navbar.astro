@@ -241,4 +241,46 @@ import { Image } from "@astrojs/image/components";
       }
     });
   }
+
+  // Anchor link animation
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll("a[href^='#']").forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        history.pushState({}, '', targetId);
+
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+
+        let intervalId: any;
+        let userScrolling = false;
+
+        const handleUserScroll = () => {
+          userScrolling = true;
+          clearInterval(intervalId);
+          window.removeEventListener('wheel', handleUserScroll);
+        };
+
+        window.addEventListener('wheel', handleUserScroll);
+
+        const checkVisibility = () => {
+          const rect = targetElement.getBoundingClientRect();
+          const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+          if (isVisible || userScrolling) {
+            clearInterval(intervalId);
+            window.removeEventListener('wheel', handleUserScroll); 
+          } else {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        };
+
+        intervalId = setInterval(checkVisibility, 800);
+      });
+    });
+  });
+
+  
 </script>

@@ -23,11 +23,13 @@ import RestaurantMenus from "../../components/HomePageSections/RestaurantMenus.a
 import WaitingListModal from "../../components/HomePageSections/WaitingListModal.astro";
 import Entertainment from "../../components/HomePageSections/Entertainment.astro";
 import OurPartyEs from "../../components/HomePageSections/OurParty/OurPartyEs.astro";
+import NewYearsEvePopup from "../../components/PopUps/NewYearsEvePopup.astro";
 
 changeLanguage("es");
 ---
 
 <Layout>
+  <NewYearsEvePopup />
   <VideoBanner />
   <Countdown />
   <TheBall />

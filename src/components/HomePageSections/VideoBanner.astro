@@ -4,6 +4,8 @@ import logo from "../../assets/images/logo.svg";
 import { t } from "i18next";
 import { Image } from "@astrojs/image/components";
 import { Trans } from "astro-i18next/components";
+
+const isSoldout = true;
 ---
 
 <div class="video-background">
@@ -19,8 +21,51 @@ import { Trans } from "astro-i18next/components";
     width={167}
     height={94}
     loading="eager"
-  />
-  <p class="slogan">
+  />{
+    isSoldout ? (
+      <div class="container justify-content-center align-items-center">
+        <h3 style="color: rgb(188, 6, 6); font-weight: bold;">
+          {t("popup.soldout.title")}
+        </h3>
+        <p class="slogan">{t("popup.soldout.message")} <br> {t("popup.soldout.message-notification")}</p>
+        <form id="waitlistForm" class="soldout-form">
+          <div class="input-group mb-4">
+            <input
+              id="emailInput"
+              type="email"
+              class="form-control"
+              style="width: 430px;"
+              placeholder={t("popup.soldout.input-placeholder")}
+              aria-label="Email"
+              required
+            />
+            <button class="btn btn-primary" id="btn-join" type="submit">
+              {t("popup.soldout.button")}
+            </button>
+          </div>
+        </form>
+      </div>
+    ) : (
+      <span>
+        <p class="slogan">
+          <Trans i18nKey="common.slogan">
+            New Year's Eve Party <br />
+            Street Live View of the Ball Drop <br />
+            Times Square <br />
+            New York City <br />
+            2025
+          </Trans>
+        </p>
+        <a href="#who-we-are-section" class="bounce" aria-label="Scroll down">
+          <i class="bi bi-chevron-down" />
+        </a>
+        <a class="btn btn-primary" href="/tickets" target="_blank">
+          {t("common.join-waiting-list")}
+        </a>
+      </span>
+    )
+  }
+  {/* <p class="slogan">
     <Trans i18nKey="common.slogan">
       New Year's Eve Party <br />
       Street Live View of the Ball Drop <br />
@@ -38,7 +83,7 @@ import { Trans } from "astro-i18next/components";
     target="_blank"
   >
     {t("common.buy-your-tickets")}  
-  </a>
+  </a> */}
 </div>
 
 <style lang="scss">
@@ -106,3 +151,30 @@ import { Trans } from "astro-i18next/components";
     }
   }
 </style>
+
+<script>
+  import { Waitlist } from "../../classes/Waitlist";
+  const waitlistForm = document.getElementById("waitlistForm");
+  const emailInput = document.getElementById("emailInput");
+  const buttonJoin = document.getElementById("btn-join");
+
+  emailInput?.addEventListener("blur", () => {
+    buttonJoin.disabled = false;
+  });
+
+  waitlistForm?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const email = emailInput.value;
+
+    try {
+      const waitlist = new Waitlist(email);
+      buttonJoin.disabled = true;
+      const message = await Waitlist.create(waitlist);
+      alert(message);
+    } catch (error) {
+      buttonJoin.disabled = false;
+      alert("Failed to join the waitlist. Please try again later.");
+    }
+  });
+</script>

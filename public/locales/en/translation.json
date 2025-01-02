@@ -159,5 +159,10 @@
   "tickets.children.description": "Child (Under 12 years) each ticket. Accompanying dinner ticket only - not at bar",
   "entertainment": "Entertainment",
   "entertainment.description": "What better way to spend a fun New Year's Eve than with three amazing New York entertainers.<br><br>The duo Acute Inflections' music and melody has been filling the hearts of audiences in venues all over the city (and world)!<br><br>Rhythm in Motion DJ team is renowned for their mix up traditional, original, and perfectly picked tunes that draw people on to the dance floor and party all night long.<br><br>LA Photo Party is a modern take on the classic photo booth experience; offering a range of classic to cutting-edge services that connect brands to their audiences.",
-  "biographies": "Biographies"
+  "biographies": "Biographies",
+  "popup.soldout.title": "Sold Out",
+  "popup.soldout.message": "Tickets for our New Year's Eve party are sold out.",
+  "popup.soldout.input-placeholder": "Enter your email to join the waitlist",
+  "popup.soldout.button": "Join the waitlist",
+  "popup.soldout.message-notification": "We'll notify you if tickets become available"
 }

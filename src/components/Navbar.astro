@@ -1,5 +1,5 @@
 ---
-import logo from "../assets/images/favicon.png";
+import logo from "../assets/images/rosie-mm-badge.png";
 import { LanguageSelector } from "astro-i18next/components";
 import { t } from "i18next";
 import { Image } from "@astrojs/image/components";
@@ -12,8 +12,8 @@ import { Image } from "@astrojs/image/components";
         <i class="bi bi-volume-up-fill"></i>
         <span>{t("common.sound")}</span>
       </button>
-      <a class="navbar-brand" href="#">
-        <Image src={logo} alt="Rosie O'Grady's Logo" width={30} height={30} format="webp" />
+      <a class="navbar-brand" href="#" onclick="window.scrollTo(0, 0); return false;">
+        <Image src={logo} alt="Rosie O' Grady's Logo" width={48} height={48} />
       </a>
     </div>
     <div style="display: inherit;">
@@ -201,6 +201,8 @@ import { Image } from "@astrojs/image/components";
 </style>
 
 <script>
+  import { t } from "i18next";
+
   const navbar = document.querySelector(".navbar") as HTMLElement;
   window.onscroll = function () {
     // If we are after the balldrop section, set the navbar to be black and the navbar-brand visible
@@ -217,6 +219,28 @@ import { Image } from "@astrojs/image/components";
       navbarBrand!.style.opacity = "0";
     }
   };
+
+  // Check window width on load and detect if we are on mobile, also check on resize
+  const isMobile = () => window.innerWidth <= 760;
+  const adaptWords = (spaLink: HTMLElement, nyeLink: HTMLElement) => {
+    if (isMobile()) {
+      // If we are on mobile, change ESPAÑOL to SPA and NEW YEAR'S EVE to NYE
+      if (spaLink) spaLink.innerHTML = t("common.spanish.abbreviated") || "SPA";
+      if (nyeLink) nyeLink.innerHTML = "MM";
+    } else {
+      // If we are on desktop, change SPA to ESPAÑOL and NYE to NEW YEAR'S EVE
+      if (spaLink) spaLink.innerHTML = t("common.spanish") || "ESPAÑOL";
+      if (nyeLink) nyeLink.innerHTML = "MANHATTAN MANOR";
+    }
+  };
+
+  const spaLink = document.querySelector("#spa-link") as HTMLElement;
+  const nyeLink = document.querySelector("#nye-link") as HTMLElement;
+  adaptWords(spaLink, nyeLink);
+
+  window.addEventListener("resize", () => {
+    adaptWords(spaLink, nyeLink);
+  });
 
   // Sound button
   const video = document.getElementById("background-video") as HTMLVideoElement;
@@ -242,17 +266,31 @@ import { Image } from "@astrojs/image/components";
     });
   }
 
-  // Anchor link animation
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll("a[href^='#']").forEach(link => {
-      link.addEventListener('click', function(event) {
+  // Show sidenav
+  const sidenav = document.querySelector(".sidenav") as HTMLElement;
+  const sidenavContent = document.querySelector(
+    ".sidenav__content"
+  ) as HTMLElement;
+  if (sidenav && sidenavContent)
+    sidenav.addEventListener("click", () => {
+      if (sidenavContent.style.display === "block") {
+        sidenavContent.style.display = "none";
+      } else {
+        sidenavContent.style.display = "block";
+      }
+    });
+
+  // Triggers the ScrollIntoview animation if the content is not visible in the viewport
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("a[href^='#']").forEach((link) => {
+      link.addEventListener("click", function (event) {
         event.preventDefault();
-        const targetId = this.getAttribute('href');
+        const targetId = this.getAttribute("href");
         const targetElement = document.querySelector(targetId);
 
-        history.pushState({}, '', targetId);
+        history.pushState({}, "", targetId);
 
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+        targetElement.scrollIntoView({ behavior: "smooth" });
 
         let intervalId: any;
         let userScrolling = false;
@@ -260,10 +298,10 @@ import { Image } from "@astrojs/image/components";
         const handleUserScroll = () => {
           userScrolling = true;
           clearInterval(intervalId);
-          window.removeEventListener('wheel', handleUserScroll);
+          window.removeEventListener("wheel", handleUserScroll);
         };
 
-        window.addEventListener('wheel', handleUserScroll);
+        window.addEventListener("wheel", handleUserScroll);
 
         const checkVisibility = () => {
           const rect = targetElement.getBoundingClientRect();
@@ -271,9 +309,9 @@ import { Image } from "@astrojs/image/components";
 
           if (isVisible || userScrolling) {
             clearInterval(intervalId);
-            window.removeEventListener('wheel', handleUserScroll); 
+            window.removeEventListener("wheel", handleUserScroll);
           } else {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
+            targetElement.scrollIntoView({ behavior: "smooth" });
           }
         };
 
@@ -281,6 +319,4 @@ import { Image } from "@astrojs/image/components";
       });
     });
   });
-
-  
 </script>

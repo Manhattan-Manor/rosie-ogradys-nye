@@ -157,5 +157,10 @@
   "tickets.children.description": "Niños (Menores de 12 años) por ticket. Acompañando tickets de cena únicamente - no en el bar.",
   "entertainment": "Entretenimiento",
   "entertainment.description": "¿Qué mejor manera de pasar una divertida Nochevieja que con tres increíbles artistas de Nueva York?<br><br>¡La música y la melodía del dúo Acute Inflections han llenado los corazones de las audiencias en lugares de toda la ciudad (y del mundo)!<br><br>El equipo de DJ Rhythm in Motion es famoso por su mezcla de melodías tradicionales, originales y perfectamente elegidas que atraen a la gente a la pista de baile y a la fiesta toda la noche.<br><br>LA Photo Party es una versión moderna de la clásica experiencia de fotomatón; ofrece una gama de servicios clásicos y de vanguardia que conectan a las marcas con sus audiencias.",
-  "biographies": "Biografías"
+  "biographies": "Biografías",
+  "popup.soldout.title": "¡Entradas agotadas!",
+  "popup.soldout.message": "Las entradas para nuestro evento de año nuevo están agotadas.",
+  "popup.soldout.input-placeholder": "Ingrese su dirección de correo electrónico",
+  "popup.soldout.button": "Únase a la lista de espera",
+  "popup.soldout.message-notification": "We'll notify you if tickets become available."
 }

@@ -41,12 +41,12 @@ const nextDecember31DateFormattedCapitalized =
       href="https://www.timessquarenyc.org/nye/nye-parties"
       target="_blank"
     >
-      Our event is listed on the Times Square Alliance Official site Under Rosie O'Grady's listing
+      {t("common.our-party-event")}
     </a>
 
     <a
       class="btn btn-primary mt-5 px-4 py-3 text-uppercase"
-      href="https://www.nye.manhattanmanor.com/tickets/"
+      href={ `https://nye.manhattanmanor.com/${(currentLanguage == 'es' ? currentLanguage + "/" : "")}tickets`}
       target="_blank"
     >
       {t("common.buy-nye-tickets")}

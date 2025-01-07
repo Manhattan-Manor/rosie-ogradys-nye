@@ -4,8 +4,10 @@ import logo from "../../assets/images/logo.svg";
 import { t } from "i18next";
 import { Image } from "@astrojs/image/components";
 import { Trans } from "astro-i18next/components";
+import i18next from "i18next";
 
 const isSoldout = false;
+const language = i18next.language;
 ---
 
 <div class="video-background">
@@ -59,10 +61,15 @@ const isSoldout = false;
         <a href="#who-we-are-section" class="bounce" aria-label="Scroll down">
           <i class="bi bi-chevron-down" />
         </a>
+        
         <p class="early-bird">
-          Early Bird until June 30, 2025
+          {t("common.early-bird")}
         </p>
-        <a class="btn btn-primary" href="https://nye.manhattanmanor.com/tickets" target="_blank">
+
+        <a class="btn btn-primary" 
+          href={ `https://nye.manhattanmanor.com/${(language == 'es' ? language + "/" : "")}tickets`}
+          target="_blank"
+        >
           {t("common.join-waiting-list")}
         </a>
       </span>

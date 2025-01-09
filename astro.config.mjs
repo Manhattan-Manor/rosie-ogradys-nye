@@ -5,12 +5,14 @@ import image from "@astrojs/image";
 import critters from "astro-critters";
 import cookieconsent from "@jop-software/astro-cookieconsent";
 import partytown from "@astrojs/partytown";
+import astroI18nextReloader from "./astro-i18next-reloader.mjs";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
     react(),
     astroI18next(),
+    astroI18nextReloader(),
     image({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),

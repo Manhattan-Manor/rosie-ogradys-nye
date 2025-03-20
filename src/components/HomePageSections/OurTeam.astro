@@ -12,9 +12,9 @@ import { t } from "i18next";
   <p class="text-center">{t("our-team.description")}</p>
 
   <div
-    class="d-flex justify-content-center justify-content-md-between flex-wrap"
+    class="d-flex justify-content-center flex-wrap gap-4"
   >
-    <div
+    <!-- <div
       class="text-center d-flex justify-content-center flex-column align-items-center"
     >
       <Image
@@ -26,7 +26,8 @@ import { t } from "i18next";
       />
       <h4>Amanda Smith</h4>
       <p>{t("our-team.amanda.role")}</p>
-    </div>
+    </div> -->
+    
     <div
       class="text-center d-flex justify-content-center flex-column align-items-center"
     >
@@ -56,6 +57,7 @@ import { t } from "i18next";
       <p>{t("our-team.michelle.role")}</p>
     </div>
   </div>
+
 
   <p class="text-center mt-3">
     <a href={localizePath("/biographies")}>{t("biographies")}</a>
